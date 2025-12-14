@@ -1,13 +1,13 @@
 services:
   bookings:
-    image: ghcr.io/naoiseol/cicd_bookings/bookings3:latest
+    image: ghcr.io/naoiseol/cicd_bookings/bookings:latest
     ports:
       - "8001:8000"
     networks:
       - labnet
 
   users:
-    image: ghcr.io/naoiseol/cicd_users/users3:latest
+    image: ghcr.io/naoiseol/cicd_users/users:latest
     ports:
       - "8002:8000"
     networks: 
