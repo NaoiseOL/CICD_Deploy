@@ -10,11 +10,11 @@ services:
     image: ghcr.io/naoiseol/cicd_users/users:latest
     ports:
       - "8002:8000"
-    networks:
+    networks: 
       - labnet
   
   payments:
-    image: ghcr.io/naoiseol/cicd_payments/payments:latest
+    image: ghcr.io/naoiseol/cicd_payments/payments2:latest
     ports:
       - "8003:8000"
     networks:
