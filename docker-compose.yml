@@ -3,6 +3,8 @@ services:
     image: ghcr.io/naoiseol/cicd_bookings/bookings1.1:latest
     ports:
       - "8001:8000"
+    environment:
+      RABBIT_URL: amqps://zqlmdgia:a9AbmmC63zt6Isibqgt5JQurCnnDPGYu@whale.rmq.cloudamqp.com/zqlmdgia
     networks:
       - labnet
 
@@ -10,6 +12,8 @@ services:
     image: ghcr.io/naoiseol/users1.1:latest
     ports:
       - "8002:8000"
+    environment:
+      RABBIT_URL: amqps://zqlmdgia:a9AbmmC63zt6Isibqgt5JQurCnnDPGYu@whale.rmq.cloudamqp.com/zqlmdgia
     networks: 
       - labnet
   
@@ -17,6 +21,17 @@ services:
     image: ghcr.io/naoiseol/cicd_payments/payments2:latest
     ports:
       - "8003:8000"
+    environment:
+      RABBIT_URL: amqps://zqlmdgia:a9AbmmC63zt6Isibqgt5JQurCnnDPGYu@whale.rmq.cloudamqp.com/zqlmdgia
+    networks:
+      - labnet
+
+  notifications:
+    image: ghcr.io/naoiseol/notifs1.1:latest
+    ports:
+      - "8004:8000"
+    environment:
+      RABBIT_URL: amqps://zqlmdgia:a9AbmmC63zt6Isibqgt5JQurCnnDPGYu@whale.rmq.cloudamqp.com/zqlmdgia
     networks:
       - labnet
 
