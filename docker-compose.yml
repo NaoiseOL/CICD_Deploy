@@ -1,13 +1,4 @@
 services:
-  rabbitmq:
-    image: rabbitmq:3-management
-    container_name: rabbitmq
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    networks:
-      - labnet
-
   bookings:
     image: ghcr.io/naoiseol/cicd_bookings/bookings1.1:latest
     ports:
