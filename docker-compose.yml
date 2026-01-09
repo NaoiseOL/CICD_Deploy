@@ -1,10 +1,13 @@
 services:
   bookings:
+    depends_on:
+      - users
     image: ghcr.io/naoiseol/cicd_bookings/bookings1.1:latest
     ports:
       - "8001:8000"
     environment:
       RABBIT_URL: amqps://zqlmdgia:a9AbmmC63zt6Isibqgt5JQurCnnDPGYu@whale.rmq.cloudamqp.com/zqlmdgia
+      USERS_SERVICE_URL: http://users:8000   
     networks:
       - labnet
 
